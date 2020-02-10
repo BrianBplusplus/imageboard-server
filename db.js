@@ -1,12 +1,13 @@
-const databaseURL = process.env.DATABASE_URL || 'postgres://postgres:secret@localhost:5432/imageboard'
+const databaseURL =
+  process.env.DATABASE_URL ||
+  "postgres://postgres:secret@localhost:5432/postgres";
 const Sequelize = require("sequelize");
 const db = new Sequelize(databaseURL);
 
-try  {
-  db.sync({ force: false })
-  .then(() => console.log("database connected"));
-} catch(err) {
+try {
+  db.sync({ force: false }).then(() => console.log("database connected"));
+} catch (err) {
   console.error("Error synching database ", err);
 }
 
-module.exports = db
+module.exports = db;
