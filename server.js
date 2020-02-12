@@ -20,7 +20,7 @@ app.use(imageRouter);
 app.use(loginRouter);
 app.use(userRouter);
 
-app.get("/", (req, res) => res.send("Buenas Dias! La pagina della casa"));
+app.get("/", (request, response) => res.send("This page doesn't exist"));
 
 app.listen(port, () =>
   console.log(`Greetings! Imageboard server listening on port ${port}!`)
